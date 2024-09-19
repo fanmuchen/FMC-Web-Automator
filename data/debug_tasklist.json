@@ -1,0 +1,35 @@
+[
+  {
+    "id": "navigate",
+    "type": "navigate",
+    "content": {
+      "priority": 100,
+      "url": "https://ttq.x2.arabics.travian.com",
+      "activation": "oneTime"
+    },
+    "results": [
+      {
+        "startTime": "2024-06-16T16:42:12.456Z",
+        "finishTime": "2024-06-16T16:42:16.549Z",
+        "result": "success"
+      }
+    ]
+  },
+  {
+    "id": "login",
+    "type": "trLogin",
+    "content": {
+      "priority": 100,
+      "username": "neues",
+      "password": "qwe123AA",
+      "activation": "oneTime"
+    },
+    "results": [
+      {
+        "startTime": "2024-06-16T16:42:17.465Z",
+        "finishTime": "2024-06-16T16:42:20.284Z",
+        "result": "success"
+      }
+    ]
+  }
+]

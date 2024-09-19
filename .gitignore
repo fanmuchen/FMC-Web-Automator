@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+data/profile.json
+data/tasklist.json
+
+# Output of build process
+dist/
+build/
+*.log
+
+# Electron specific
+*.db
+*.asar
+*.pdb
+*.dmp
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Puppeteer specific
+.puppeteer/
+
+gist.sh
+gist.md
+tree.sh

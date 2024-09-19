@@ -1,0 +1,45 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      # - name: Install dependencies
+      #   run: npm install
+      - name: Install dependencies
+        run: |
+          npm install
+          cd control-panel
+          npm install
+          cd ..
+
+      - name: Build unpacked and installer versions
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm run dist
+
+      - name: Upload unpacked artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: F-Auto-T-unpacked
+          path: dist/*-unpacked/
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: F-Auto-T-installer
+          path: dist/*.exe

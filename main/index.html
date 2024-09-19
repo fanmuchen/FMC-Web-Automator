@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron Web Automation</title>
+    <link rel="stylesheet" href="primer.css">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .address-bar {
+            padding: 10px;
+            background: #f1f1f1;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+        }
+        webview {
+            flex: 1;
+        }
+        .divider {
+            width: 1px;
+            background: #ccc;
+        }
+        .status {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="column">
+        <div class="address-bar">
+            <input type="text" id="control-panel-url" class="form-control" />
+            <button id="control-panel-go" class="btn btn-primary">Go</button>
+        </div>
+        <webview id="control-panel-webview"></webview>
+    </div>
+    <div class="divider"></div>
+    <div class="column">
+        <div class="address-bar">
+            <input type="text" id="auto-target-url" class="form-control" />
+            <button id="auto-target-go" class="btn btn-primary">Go</button>
+            <div id="auto-target-status" class="status">Idle</div>
+        </div>
+        <webview id="auto-target-webview" partition="persist:autoTarget""></webview>
+    </div>
+    <script src="./renderer.js"></script> 
+</body>
+</html>

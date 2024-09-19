@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+.content {
+  flex: 1;
+  margin: 10px;
+  overflow-y: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+.ip-display {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa; /* You can adjust the background color as needed */
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for better visibility */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ip-info {
+  margin: 0 10px;
+}

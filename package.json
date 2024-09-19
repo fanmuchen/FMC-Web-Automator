@@ -1,0 +1,52 @@
+{
+  "name": "f-auto-t",
+  "version": "1.0.0",
+  "description": "F Auto T, Intuitive automation.",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "start-react": "cd control-panel && npm start",
+    "build-react": "cd control-panel && npm run build",
+    "bstart": "npm run build-react && electron .",
+    "dist": "npm run build-react && npm run dist-unpacked && npm run dist-installer",
+    "dist-unpacked": "electron-builder --dir",
+    "dist-installer": "electron-builder --win --x64",
+    "clean-cache": "npm cache clean --force && rm -rf node_modules package-lock.json && cd control-panel && npm cache clean --force && rm -rf node_modules package-lock.json && cd ..",
+    "install-dep": "npm install --verbose && cd control-panel && npm install --verbose && cd ..",
+    "b": "npm run install-dep && npm run dist",
+    "bb": "npm run clean-cache && npm run install-dep && npm run dist"
+  },
+  "build": {
+    "appId": "fautot.muchen.fan",
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "files": [
+      "main/**/*",
+      "control-panel/build/**/*",
+      "automation/**/*",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "F-Auto-T",
+      "runAfterFinish": true
+    }
+  },
+  "dependencies": {
+    "axios": "^1.7.1",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.19.2",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.6",
+    "electron-builder": "^24.13.3"
+  }
+}
