@@ -1,3 +1,3 @@
-# F-Auto-T
+# FMC-Web-Automator
 
-F Auto T, Intuitive automation.
+An Automation Tool.
